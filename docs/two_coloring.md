@@ -1,6 +1,6 @@
 ---
 title:  2彩色(二部グラフの彩色)
-documentation_of: //graph/two_coloring.md
+documentation_of: //graph/two_coloring.hpp
 ---
 
 グラフが2彩色可能か（=グラフが二部グラフか）の判定は 頂点数$N$, 辺数 $M$ に対し $O(N+M)$ で可能である．
