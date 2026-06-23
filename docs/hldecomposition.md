@@ -1,5 +1,7 @@
-# Heavy Light Decomposition
-
+---
+title:  Heavy Light Decomposition
+documentation_of: //tree/hldecomposition.hpp
+---
 木をいくつかのパスに分解し、パスクエリに答える手法
 
 根付き木において、頂点数が最も多い子に向かう辺を **Heavy Edge** , そうでない辺を **Light Edge** と呼ぶ。

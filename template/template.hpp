@@ -1,16 +1,26 @@
 //# pragma GCC target("avx2")
-# pragma GCC optimize("O3")
-# pragma GCC optimize("unroll-loops")
+#pragma once
+#pragma GCC optimize("O3")
+#pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+using ll=long long;
+using ld=long double;
+using ull=unsigned long long;
 typedef pair<ll,ll> P;
-constexpr ll INF=4e18;
+#define vec vector
+#define pb emplace_back
+#define fs first
+#define sc second
 #define rep(i,n) for(ll i=0;i<(n);i++)
+#define rng(i,s,t) for(ll i=s;i<t;i++)
+#define len(a) int((a).size())
 #define all(a) a.begin(),a.end()
+#define compress(a) {sort(all(a));a.erase(unique(all(a)),a.end());}
+constexpr ll INF=4e18;
+constexpr ld EPS=1e-11;
 template<typename T> bool chmin(T& a, T b){if(a > b){a = b; return true;} return false;}
 template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return false;}
-#define compress(a) {sort(all(a));a.erase(unique(all(a)),a.end());}
 template<typename itr> void printvec(itr begin, itr end) {
     for (itr p = begin; p < end; p++){
 		if(p!=begin)cout<<" "; cout << *p;
@@ -24,23 +34,3 @@ auto makevec(std::size_t n, Args... args) {
     auto inner = makevec<T>(args...);
     return std::vector<decltype(inner)>(n, inner);
 }
-#define ACLibrary_available 1
-#ifdef ACLibrary_available
-#include<atcoder/all>
-using namespace atcoder;
-//#define static_mod 1
-//#define arbitrary_mod 2
-//#define mod1000000007 3
-#ifdef static_mod
-constexpr ll mod=65537;
-typedef static_modint<65537> mint;
-#elif arbitrary_mod
-typedef modint mint;
-#elif mod1000000007
-constexpr ll mod=1000000007;
-typedef modint1000000007 mint;
-#else
-constexpr ll mod=998244353;
-typedef modint998244353 mint;
-#endif
-#endif

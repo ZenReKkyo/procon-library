@@ -1,3 +1,8 @@
+---
+title:  Basic Template
+documentation_of: //template/template.hpp
+---
+
 ## QCFium法
 
 ```cpp

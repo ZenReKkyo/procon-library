@@ -1,4 +1,7 @@
-# Euler Tour
+---
+title:  Euler Tour
+documentation_of: //tree/eulertour.hpp
+---
 
 木の根から出発し、全ての頂点をDFSの要領で訪れたときの頂点列。
 
