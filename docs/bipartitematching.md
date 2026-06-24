@@ -19,15 +19,15 @@ documentation_of: //graph/bipartitematching.hpp
 ## 最大独立集合・最小点カバー
 
 一般のグラフにおいて，|Max Independent Set|=V-|Min Vertex Cover| が常に成立する．
-> [$ S]を Independent set とする．任意の辺[$ (u,v) \in E]について, [$ u,v]の両方が[$ S]に含まれていることは Independent set の定義からあり得ない．よって，少なくとも片方は [$ S]に含まれていない．したがって，辺[$ e \in E]の頂点のうち少なくとも1つは[$ V \setminus S] に含まれる．故に，[$ V \setminus S]はVertex Cover をなす．
-> 同様に，[$ C]をVertex Coverとすれば[$ V \setminus C]がIndependent Set をなす．
-> 以上の議論より，[$ |C_{\min}| \le V-|S_{\max}|] かつ[$ |S_{\max}| \ge V-|C_{\min}|]なので，[$ |S_{\max}|+|C_{\min}|=V] 
+> Proof. $S$ を Independent set とする．任意の辺 $(u,v) \in E$ について, $u,v$ の両方が $S$ に含まれていることは Independent set の定義からあり得ない．よって，少なくとも片方は $S$ に含まれていない．したがって，辺 $e \in E$ の頂点のうち少なくとも1つは $V \setminus S$ に含まれる．故に，$V \setminus S$ はVertex Cover をなす．
+> 同様に，$C$ をVertex Coverとすれば $V \setminus C$ がIndependent Set をなす．
+> 以上の議論より，$|C_{\min}| \le V-|S_{\max}|$ かつ $|S_{\max}| \ge V-|C_{\min}|$ なので，$|S_{\max}|+|C_{\min}|=V$ 
 
 また，二部グラフにおいて|Min Vertex Cover|=|Max Matching| が成立する．（Kőnig の定理）
 ここで、Max MatchingからMin Vertex Coverを復元することを考える。実は、残余グラフ上のsource側でsから到達不可能な点およびsink側でsから到達可能な点の和集合がMin Vertex Coverとなる。Min Cutで白のsink側と黒のsource側とも言い換えられる。
 
-> 以降source 側を単に $S$, sink側を $T$ と書く。二部グラフの辺であって、(白, $S$ )と(黒, $T$ )を結ぶ辺は存在しない。存在した場合カットの条件に反する。よって、全ての二部グラフの辺は $(S,S), (T,S), (T,T)$ のどれかである。
-> 白かつ $T$ の頂点および黒かつ $S$ の頂点は必ずマッチングの端点である。(要証明 そうでないとaugmenting pathが存在することになる)
+> Proof. 以降source 側を単に $S$, sink側を $T$ と書く。二部グラフの辺であって、(白, $S$ )と(黒, $T$ )を結ぶ辺は存在しない。存在した場合カットの条件に反する。よって、全ての二部グラフの辺は $(S,S), (T,S), (T,T)$ のどれかである。
+> 白かつ $T$ の頂点および黒かつ $S$ の頂点は必ずマッチングの端点である。 そうでないと $S,T$ それぞれの内部でaugmenting pathが存在することになり最大マッチングに反する。
 
 ## 計算量
 
