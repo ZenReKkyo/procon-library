@@ -11,6 +11,7 @@ typedef pair<ll,ll> P;
 #define pb emplace_back
 #define fs first
 #define sc second
+#define pcnt __builtin_popcountll
 #define rep(i,n) for(ll i=0;i<(n);i++)
 #define rng(i,s,t) for(ll i=s;i<t;i++)
 #define len(a) int((a).size())
