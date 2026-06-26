@@ -1,4 +1,3 @@
-#include "procon-library/template/template.hpp"
 template <typename T>
 vector<T> shortest_path(const vector<vector<pair<ll,T>>>& Graph,vector<int>s){
 	int n=Graph.size();
