@@ -1,6 +1,6 @@
 ---
-title:  二部グラフの最大マッチング
-documentation_of: //graph/bipartitematching.hpp
+title:  最短経路(負辺なし)
+documentation_of: //graph/dijkstra.hpp
 ---
 
 ## 概要
