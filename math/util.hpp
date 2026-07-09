@@ -24,3 +24,24 @@ ll sqrt_floor(ll x){
 	}
 	return lb;
 }
+ll gcd(ll a,ll b){
+	if(b==0)return a;
+	return gcd(b,a%b);
+}
+ll extgcd(ll a,ll b,ll &x,ll &y){
+	if(b==0){x=1;y=0;return a;}
+	ll d=extgcd(b,a%b,y,x);
+	y-=a/b*x;
+	return d;
+}
+template<typename T>
+T modular_equation(T a,T b,T m){
+	//ax=b mod m
+	T g=std::gcd(a,m);
+	if(b%g!=0)return -1;
+	a/=g;b/=g;m/=g;
+	T x,y;
+	extgcd(a,m,x,y);
+	x=rem(x,m);
+	return rem(x*b,m);
+}
