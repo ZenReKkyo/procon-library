@@ -34,6 +34,15 @@ ll extgcd(ll a,ll b,ll &x,ll &y){
 	y-=a/b*x;
 	return d;
 }
+ll pow_mod(ll x,ll n,ll m){
+	ll res=1;
+	while(n){
+		if(n&1)res=res*x%m;
+		x=x*x%m;
+		n>>=1;
+	}
+	return res;
+}
 template<typename T>
 T modular_equation(T a,T b,T m){
 	//ax=b mod m
