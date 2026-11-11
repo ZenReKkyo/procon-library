@@ -1,4 +1,3 @@
-#include <vector>
 template<typename T>
 struct enumeration{
 	std::vector<T> _fact,_finv,_inv;
@@ -26,5 +25,9 @@ struct enumeration{
 	T binom(int r,int c){
 		if(r<c||r<0||c<0)return T(0);
 		return _fact[r]*_finv[c]*_finv[r-c];
+	}
+	T binom_inv(int r,int c){
+		if(r<c||r<0||c<0)return T(0);
+		return _fact[c]*_fact[r-c]*_finv[r];
 	}
 };
